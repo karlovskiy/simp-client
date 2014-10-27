@@ -1,2 +1,4 @@
-simp-client
+SIMP client
 ===========
+
+Simple message protocol (SIMP) java GUI client
