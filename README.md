@@ -1,4 +1,3 @@
-SIMP client
-===========
+# SIMP client
 
-Simple message protocol (SIMP) java GUI client
+SIMP client is the java swing GUI client for Simple message protocol [server](https://github.com/karlovskiy/simp-server).
