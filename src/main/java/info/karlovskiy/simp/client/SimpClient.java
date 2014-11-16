@@ -15,13 +15,11 @@ public class SimpClient {
 
         logger.info("Starting SIMP client application");
 
-        if (args.length < 2) {
-            throw new IllegalArgumentException("Illegal program arguments. Must be default host and port.");
-        }
-
         Properties appProps = new Properties();
-        appProps.setProperty("defaultHost", args[0]);
-        appProps.setProperty("defaultPort", args[1]);
+        String defaultHost = System.getProperty("info.karlovskiy.simp.client.defaultHost");
+        String defaultPort = System.getProperty("info.karlovskiy.simp.client.defaultPort");
+        appProps.setProperty("defaultHost", defaultHost != null ? defaultHost : "localhost");
+        appProps.setProperty("defaultPort", defaultPort != null ? defaultPort : "7777");
         appProps.setProperty("defaultClient", System.getProperty("user.name"));
 
         Application app = Application.getInstance();

@@ -5,11 +5,14 @@ import info.karlovskiy.simp.client.connection.SIMPConnection;
 import info.karlovskiy.simp.client.connection.SIMPConnectionThread;
 import info.karlovskiy.simp.client.ui.MainPanel;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.WindowConstants;
+import java.awt.Image;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.CountDownLatch;
@@ -46,6 +49,14 @@ public class Application {
 
                 mainPanel = new MainPanel();
                 frame.add(mainPanel);
+
+                Image[] icons = new Image[]{
+                        new ImageIcon(Application.class.getResource("icon128.png")).getImage(),
+                        new ImageIcon(Application.class.getResource("icon64.png")).getImage(),
+                        new ImageIcon(Application.class.getResource("icon32.png")).getImage(),
+                        new ImageIcon(Application.class.getResource("icon16.png")).getImage()
+                };
+                frame.setIconImages(Arrays.asList(icons));
 
                 frame.setSize(400, 500);
                 frame.setLocationRelativeTo(null);
